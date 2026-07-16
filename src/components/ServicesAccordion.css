@@ -1,0 +1,113 @@
+.acc {
+  padding: 140px 0;
+  background: var(--bg);
+}
+
+.acc__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.acc__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.acc__row {
+  position: relative;
+  display: block;
+  padding: 34px 10px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.acc__list > div:last-child .acc__row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.acc__row-top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.acc__num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  width: 34px;
+  flex-shrink: 0;
+  transition: color 0.4s var(--ease);
+}
+
+.acc__title {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(30px, 5vw, 58px);
+  letter-spacing: -0.01em;
+  color: var(--text);
+  transition: color 0.4s var(--ease);
+  text-transform: uppercase;
+}
+
+.acc__circle {
+  margin-left: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--surface-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.acc__desc {
+  max-width: 460px;
+  margin-left: 58px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s var(--ease), opacity 0.35s var(--ease), margin-top 0.45s var(--ease);
+}
+
+.acc__row:hover .acc__title,
+.acc__row:focus-visible .acc__title {
+  color: var(--accent);
+}
+
+.acc__row:hover .acc__num,
+.acc__row:focus-visible .acc__num {
+  color: var(--accent);
+}
+
+.acc__row:hover .acc__circle,
+.acc__row:focus-visible .acc__circle {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0a0a0a;
+  transform: rotate(45deg);
+}
+
+.acc__row:hover .acc__desc,
+.acc__row:focus-visible .acc__desc {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+@media (max-width: 700px) {
+  .acc__title {
+    font-size: 30px;
+  }
+  .acc__desc {
+    margin-left: 0;
+  }
+}

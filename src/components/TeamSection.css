@@ -1,0 +1,149 @@
+.team {
+  padding: 60px 0 140px;
+  background: var(--bg);
+}
+
+.team__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 56px);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.team__card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* --- 3D flip card --- */
+.team__flip {
+  aspect-ratio: 4 / 5;
+  perspective: 1400px;
+}
+
+.team__flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s var(--ease);
+}
+
+.team__flip:hover .team__flip-inner {
+  transform: rotateY(180deg);
+}
+
+.team__front,
+.team__back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.team__front {
+  background: var(--surface);
+}
+
+.team__front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.35) contrast(1.05);
+}
+
+.team__plus {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(243, 243, 239, 0.92);
+  color: #0a0a0a;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team__back {
+  transform: rotateY(180deg);
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 28px 22px;
+}
+
+.team__back-bio {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.team__back-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.team__back-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.team__caption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.team__name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (hover: none) {
+  /* touch devices: tap toggles the flip instead of relying on hover */
+  .team__flip:active .team__flip-inner {
+    transform: rotateY(180deg);
+  }
+}

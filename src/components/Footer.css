@@ -1,0 +1,100 @@
+.foot {
+  background: var(--bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 100px;
+}
+
+.foot__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding-bottom: 80px;
+}
+
+.foot__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+  max-width: 300px;
+}
+
+.foot__logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.foot__contact a {
+  transition: color 0.3s var(--ease);
+  width: fit-content;
+}
+
+.foot__contact a:hover {
+  color: var(--accent);
+}
+
+.foot__cols {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.foot__col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 130px;
+}
+
+.foot__col span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--surface-line);
+  margin-bottom: 4px;
+}
+
+.foot__col a {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.3s var(--ease);
+  width: fit-content;
+}
+
+.foot__col a:hover {
+  color: var(--accent);
+}
+
+.foot__marquee {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 0;
+}
+
+.foot__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 26px var(--edge);
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.foot__bottom-link {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .foot__top {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
